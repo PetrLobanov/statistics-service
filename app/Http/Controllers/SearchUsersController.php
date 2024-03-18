@@ -11,7 +11,7 @@ class SearchUsersController extends Controller
 {
     public function index(SearchUsersRequest $request): SearchUsersResource
     {
-        $response = (new SearchUsers(User::query()->limit(100), $request))->apply();
+        $response = (new SearchUsers(User::query(), $request))->apply();
         return SearchUsersResource::make($response);
     }
 }

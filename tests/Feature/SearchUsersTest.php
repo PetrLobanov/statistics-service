@@ -18,7 +18,7 @@ class SearchUsersTest extends TestCase
             'accept' => 'application/json',
         ]);
 
-        $response->assertJsonValidationErrors(['name', 'age_min', 'age_max']);
+        $response->assertJsonValidationErrors(['name', 'ageMin', 'ageMax']);
     }
 
     public function testValidateOk(): void
@@ -33,7 +33,7 @@ class SearchUsersTest extends TestCase
             'accept' => 'application/json',
         ]);
 
-        $response->assertValid(['name', 'age_min', 'age_max']);
+        $response->assertValid(['name', 'ageMin', 'ageMax']);
     }
 
     public function testSearchUsers(): void
